@@ -2,10 +2,14 @@ import Wrapper from "../layout/Wrapper"
 import BlogPost from "../views/BlogPost"
 import config from "../../blog.config.js"
 import { getPostBySlug, getAllPosts } from "../api"
-import { NextPage } from "next"
+import { GetStaticPaths, GetStaticProps, NextPage } from "next"
 import { Post } from "views/Posts"
 
-const PostPage: NextPage<{ post: Post }> = ({ post }) => (
+interface Props {
+  post: Post
+}
+
+const PostPage: NextPage<Props> = ({ post }) => (
   <Wrapper
     url={config.url + post.slug}
     title={config.title + " | " + post.title}
@@ -17,7 +21,22 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => (
   </Wrapper>
 )
 
-export async function getStaticProps({ params }) {
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+  const posts = getAllPosts(["slug"])
+
+  return {
+    paths: posts.map(({ slug }) => {
+      return {
+        params: { slug },
+      }
+    }),
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps<Props, { slug: string }> = async ({
+  params,
+}) => {
   const post = getPostBySlug(params.slug, [
     "title",
     "excerpt",
@@ -34,19 +53,6 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { post },
-  }
-}
-
-export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"])
-
-  return {
-    paths: posts.map(({ slug }) => {
-      return {
-        params: { slug },
-      }
-    }),
-    fallback: false,
   }
 }
 

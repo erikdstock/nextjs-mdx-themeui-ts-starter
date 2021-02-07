@@ -40,7 +40,6 @@
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.0",
-    "@types/theme-ui": "^0.3.7",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
     "eslint": "^7.19.0",
@@ -53,8 +52,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'skipping: lint-staged'",
-      "pre-push": "echo 'skipping: yarn run type-check'"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
     }
   },
   "lint-staged": {

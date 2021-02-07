@@ -1,4 +1,10 @@
-# Next.js MDX Blog Starter
+# Next.js MDX Blog Starter with Theme-UI & Typescript
+
+This is a starter blog forked from [johnpolacek/nextjs-mdx-blog-starter](https://github.com/johnpolacek/nextjs-mdx-blog-starter). Almost all styles and docs have been preserved, including the rest of this README. The main differences with that repo:
+- [ ] The site has been entirely converted to typescript
+- [ ] Commit and push hooks for linting and type-checking have been enabled (in progress)
+- [x] Theme-ui has been updated to 0.6.6-alpha for native typescript support
+- [x] Added a simple github workflow for testing
 
 Next.js MDX Blog Starter for building blogs with [Next.js](https://nextjs.org/) and [MDX](https://mdxjs.com/), including [Theme UI](https://theme-ui.com/home/) Component Design System, [Vercel Deployment](https://vercel.com/) and more.
 

@@ -1,10 +1,17 @@
-import { Link as A } from "theme-ui"
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import Link from "next/link"
 
-const NavLink = ({ href, active, children }) => (
-  <Link href={href}>
-    <A
+interface Props {
+  href: string
+  active?: boolean
+}
+const NavLink: React.FC<Props> = ({ href, active, children }) => (
+  <Link href={href} passHref>
+    <a
       sx={{
+        variant: "styles.a",
         py: [2, 3],
         px: [3, 4],
         fontSize: 3,
@@ -21,7 +28,7 @@ const NavLink = ({ href, active, children }) => (
       }}
     >
       {children}
-    </A>
+    </a>
   </Link>
 )
 

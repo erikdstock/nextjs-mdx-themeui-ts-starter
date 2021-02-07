@@ -1,13 +1,15 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import MDX from "@mdx-js/runtime"
-import { Flex, Box, Heading, Text } from "theme-ui"
-import Image from "next/image"
+import { Flex, Box, Heading } from "theme-ui"
 import Container from "../ui/Container"
 import DraftBadge from "../ui/DraftBadge"
-import Link from "next/link"
-import React from "react"
+import { Link } from "ui/Link"
 
 export interface Post {
   draft?: boolean
+  date: string
   slug: string
   title: string
   excerpt: string
@@ -37,52 +39,55 @@ const Posts: (props: Props) => JSX.Element = ({
           .filter((post) => {
             return isLocal || !post.draft
           })
-          .map((post) => (
-            <Box sx={{ pb: 5 }} key={post.slug}>
-              <Heading sx={{ pb: 2, position: "relative" }}>
-                {post.draft && <DraftBadge />}
-                <Link href={"/" + post.slug} passHref>
-                  <a>{post.title}</a>
-                </Link>
-              </Heading>
-              {post.coverImage && (
-                <Box
-                  sx={{
-                    mt: 2,
-                    mb: 3,
-                    border: "1px solid",
-                    borderColor: "rgba(0,0,0,.1)",
-                  }}
-                >
-                  <Image
-                    height={post.coverImageHeight}
-                    width={post.coverImageWidth}
-                    src={post.coverImage}
-                    alt={post.coverImageAlt || ""}
-                  />
+          .map((post) => {
+            const { coverImage } = post
+
+            return (
+              <Box sx={{ pb: 5 }} key={post.slug}>
+                <Heading sx={{ pb: 2, position: "relative" }}>
+                  {post.draft && <DraftBadge />}
+                  <Link href={`/${post.slug}`}>{post.title}</Link>
+                </Heading>
+                {coverImage && (
+                  <Box
+                    sx={{
+                      mt: 2,
+                      mb: 3,
+                      width: "100%",
+                    }}
+                  >
+                    <img
+                      sx={{
+                        border: "1px solid",
+                        borderColor: "rgba(0,0,0,.1)",
+                        width: "auto",
+                        height: "auto",
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                      }}
+                      src={coverImage}
+                      alt={post.coverImageAlt || ""}
+                    />
+                  </Box>
+                )}
+                <Box sx={{ pb: 3 }}>
+                  <MDX>{post.excerpt}</MDX>
                 </Box>
-              )}
-              <Box sx={{ pb: 3 }}>
-                <MDX>{post.excerpt}</MDX>
+                <Link href={"/" + post.slug}>Read more...</Link>
               </Box>
-              <Link href={"/" + post.slug} passHref>
-                <a>Read more...</a>
-              </Link>
-            </Box>
-          ))}
+            )
+          })}
       <Flex sx={{ fontStyle: "italic" }}>
         <Box sx={{ width: "50%", py: 3, textAlign: "left" }}>
           {prevPosts !== null && (
-            <Link href={"/blog/" + prevPosts} passHref>
+            <Link href={"/blog/" + prevPosts}>
               <a>« see newer posts</a>
             </Link>
           )}
         </Box>
         <Box sx={{ width: "50%", py: 3, pr: 3, textAlign: "right" }}>
           {nextPosts !== null && (
-            <Link href={"/blog/" + nextPosts} passHref>
-              <a>see older posts »</a>
-            </Link>
+            <Link href={"/blog/" + nextPosts}>see older posts »</Link>
           )}
         </Box>
       </Flex>

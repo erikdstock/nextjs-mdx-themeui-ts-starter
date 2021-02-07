@@ -1,8 +1,16 @@
 import Head from "next/head"
-import PropTypes from "prop-types"
 import config from "../../blog.config"
 
-const DocHead = (props) => (
+export interface Props {
+  title: string
+  description: string
+  url: string
+  imageUrl?: string
+  imageAlt?: string
+  twitter?: string
+}
+
+export const DocHead: React.FC<Props> = (props) => (
   <>
     <Head>
       <title>{props.title}</title>
@@ -33,14 +41,3 @@ const DocHead = (props) => (
     </Head>
   </>
 )
-
-DocHead.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string,
-  imageAlt: PropTypes.string,
-  twitter: PropTypes.string,
-}
-
-export default DocHead

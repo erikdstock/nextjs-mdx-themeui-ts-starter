@@ -5,6 +5,7 @@ This is a starter blog forked from [johnpolacek/nextjs-mdx-blog-starter](https:/
 - [ ] Linting, prettier and typescript conventions applied, all errors and warnings fixed
 - [ ] Commit and push hooks for linting and type-checking have been enabled (override with `--no-verify` or remove `husky` and `lint-staged` from dependencies)
 - [ ] Reconfigured to work for static exports
+- [ ] Example app deployed to vercel
 - [x] Switched `yarn` to `npm` (personal convention)
 - [x] Theme-ui has been updated to 0.6.6-alpha for native typescript support
 - [x] Added a simple github workflow for testing

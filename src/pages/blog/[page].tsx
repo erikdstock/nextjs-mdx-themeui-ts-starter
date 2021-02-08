@@ -2,7 +2,7 @@ import config from "../../../blog.config"
 import Wrapper from "layout/Wrapper"
 import Posts, { Post } from "../../views/Posts"
 import { getAllPosts } from "../../api"
-import { NextPage } from "next"
+import { GetStaticProps, NextPage } from "next"
 
 interface Props {
   posts: Post[]
@@ -30,7 +30,7 @@ const PostsPage: NextPage<Props> = ({
   </Wrapper>
 )
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps<any> = async ({ params }) => {
   const posts = getAllPosts([
     "title",
     "date",
@@ -63,7 +63,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticProps = async () => {
   const numPages = (config.postsPerPage % getAllPosts().length) + 1
 
   return {

@@ -17,7 +17,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => (
   </Wrapper>
 )
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   const post = getPostBySlug(params.slug, [
     "title",
     "excerpt",
@@ -37,7 +37,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const posts = getAllPosts(["slug"])
 
   return {

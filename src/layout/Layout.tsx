@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { theme } from "./Theme"
+import { theme } from "../styles/theme"
 import { Box } from "theme-ui"
 import { DocHead, Props as DocHeadProps } from "./DocHead"
 import ThemeToggle from "../ui/ThemeToggle"

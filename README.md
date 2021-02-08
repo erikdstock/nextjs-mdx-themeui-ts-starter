@@ -1,6 +1,7 @@
 # Next.js MDX Blog Starter with Theme-UI & Typescript
 
 This is a starter blog forked from [johnpolacek/nextjs-mdx-blog-starter](https://github.com/johnpolacek/nextjs-mdx-blog-starter). Almost all styles and docs have been preserved, including the rest of this README. The main differences with that repo (in progress):
+
 - [x] The site has been entirely converted to typescript
 - [ ] Linting, prettier and typescript conventions applied, all errors and warnings fixed
 - [ ] Commit and push hooks for linting and type-checking have been enabled (override with `--no-verify` or remove `husky` and `lint-staged` from dependencies)
@@ -34,7 +35,7 @@ If you would like to add more data to your posts, such as author information or 
 
 To edit the styling of the site, such as colors, typography and spacing, you can make changes to the theme file at `src/layout/Theme.js`. It is also there you can define styles for dark mode, or remove it.
 
-Of course, you can change or add to the existing components in `src/components/ui` or edit or create new pages in `src/pages` and `src/components/views`. 
+Of course, you can change or add to the existing components in `src/components/ui` or edit or create new pages in `src/pages` and `src/components/views`.
 
 To further customize the site, refer to the [Theme UI documentation](https://theme-ui.com/getting-started) for making and styling your own components.
 
@@ -42,7 +43,7 @@ To further customize the site, refer to the [Theme UI documentation](https://the
 
 To write a new post, create a new `.mdx` file in the `src/markdown/posts` directory.
 
-Update the front-matter for the post with its title, excerpt, cover image and the publication date. 
+Update the front-matter for the post with its title, excerpt, cover image and the publication date.
 
 You can mark a post as a draft by adding `draft: true` to the front matter of the post and then it will only display in the local dev environment.
 
@@ -52,12 +53,8 @@ The title will appear at the top of the post and will be used in the meta tags f
 
 #### Excerpt
 
-The excerpt will appear on the posts listing and as the meta description for the post page. It can be formatted in markdown. 
+The excerpt will appear on the posts listing and as the meta description for the post page. It can be formatted in markdown.
 
 #### Cover Image
 
 If included, the cover image will be displayed above the excerpt and post content. It will also be the main image that appears when the post is shared on social media. Be sure to also set the cover image alt value for accessibility.
-
-
-
-

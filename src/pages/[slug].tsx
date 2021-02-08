@@ -37,6 +37,7 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
 export const getStaticProps: GetStaticProps<Props, { slug: string }> = async ({
   params,
 }) => {
+export const getStaticProps = async ({ params }) => {
   const post = getPostBySlug(params.slug, [
     "title",
     "excerpt",
@@ -53,6 +54,19 @@ export const getStaticProps: GetStaticProps<Props, { slug: string }> = async ({
 
   return {
     props: { post },
+  }
+}
+
+export const getStaticPaths = async () => {
+  const posts = getAllPosts(["slug"])
+
+  return {
+    paths: posts.map(({ slug }) => {
+      return {
+        params: { slug },
+      }
+    }),
+    fallback: false,
   }
 }
 

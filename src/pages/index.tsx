@@ -1,6 +1,7 @@
 import config from "../../blog.config"
 import Wrapper from "../layout/Wrapper"
-import Posts, { Post } from "../views/Posts"
+import Posts from "../views/Posts"
+import { Post } from "../views/BlogPost"
 import { getAllPosts } from "../api"
 import { GetStaticProps, NextPage } from "next"
 

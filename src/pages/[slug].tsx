@@ -1,9 +1,8 @@
 import Wrapper from "../layout/Wrapper"
-import BlogPost from "../views/BlogPost"
+import BlogPost, { Post } from "../views/BlogPost"
 import config from "../../blog.config.js"
 import { getPostBySlug, getAllPosts } from "../api"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
-import { Post } from "views/Posts"
 
 interface Props {
   post: Post
@@ -17,6 +16,7 @@ const PostPage: NextPage<Props> = ({ post }) => (
     imageUrl={config.url + post.coverImage}
     imageAlt={post.coverImageAlt}
   >
+    {/* <BlogPost post={post} /> */}
     <BlogPost post={post} />
   </Wrapper>
 )

@@ -57,17 +57,4 @@ export const getStaticProps: GetStaticProps<Props, { slug: string }> = async ({
   }
 }
 
-export const getStaticPaths = async () => {
-  const posts = getAllPosts(["slug"])
-
-  return {
-    paths: posts.map(({ slug }) => {
-      return {
-        params: { slug },
-      }
-    }),
-    fallback: false,
-  }
-}
-
 export default PostPage

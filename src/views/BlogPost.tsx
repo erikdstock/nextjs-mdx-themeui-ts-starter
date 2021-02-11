@@ -7,12 +7,25 @@ import Container from "../ui/Container"
 import CodeBlock from "../ui/CodeBlock"
 import DraftBadge from "../ui/DraftBadge"
 
-const BlogPost = ({ post }) => {
+export interface Post {
+  draft?: boolean
+  date: string
+  slug: string
+  title: string
+  excerpt: string
+  content: string
+  coverImage?: string
+  coverImageHeight?: number
+  coverImageWidth?: number
+  coverImageAlt?: string
+}
+
+const BlogPost: (post: Post) => JSX.Element = (post) => {
   const isLocal = process.env.NODE_ENV === "development"
 
   const components = {
-    Box: (props) => <Box {...props} />,
-    pre: (props) => <div {...props} />,
+    // Box: (props: BoxProps) => <Box {...props} />,
+    // pre: (props: any) => <div {...props} />,
     code: CodeBlock,
   }
 

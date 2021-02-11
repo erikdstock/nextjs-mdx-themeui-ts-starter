@@ -6,18 +6,7 @@ import { Flex, Box, Heading } from "theme-ui"
 import Container from "../ui/Container"
 import DraftBadge from "../ui/DraftBadge"
 import { Link } from "ui/Link"
-
-export interface Post {
-  draft?: boolean
-  date: string
-  slug: string
-  title: string
-  excerpt: string
-  coverImage?: string
-  coverImageHeight?: number
-  coverImageWidth?: number
-  coverImageAlt?: string
-}
+import { Post } from "./BlogPost"
 
 interface Props {
   posts: Post[]

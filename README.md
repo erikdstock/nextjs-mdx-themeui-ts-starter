@@ -14,7 +14,7 @@ This is a starter blog forked from [johnpolacek/nextjs-mdx-blog-starter](https:/
 - [x] Disabled (commented out) Google analytics by default
 - [x] some restructuring based on personal preference (in particular a `components` folder), use of typescript's absolute imports from `baseUrl`
 
-_Authors: @erikdstock and @kwicz. Credit to @johnpolancek for this documentation and the overall feel of the site as well as the vast majority of its implementation_
+_Authors: [@erikdstock](https://github.com/erikdstock) and [@kwicz](https://github.com/kwicz). Credit to [@johnpolancek](https://github.com/johnpolancek) for this documentation, the overall feel of the site, and the vast majority of its implementation._
 
 ```
 Most of the remaining README is from the original repo.

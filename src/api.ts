@@ -1,7 +1,6 @@
 import fs from "fs"
 import { join } from "path"
 import matter from "gray-matter"
-import { Post } from "views/Posts"
 
 const postsDirectory = join(process.cwd(), "src/mdx/posts")
 
@@ -9,7 +8,7 @@ export function getPostSlugs(): string[] {
   return fs.readdirSync(postsDirectory)
 }
 
-export function getPostBySlug(slug: string, fields = []): Post {
+export function getPostBySlug(slug: string, fields = []): MDX.Document {
   const realSlug = slug.replace(/\.mdx$/, "")
   const fullPath = join(postsDirectory, `${realSlug}.mdx`)
   const fileContents = fs.readFileSync(fullPath, "utf8")
@@ -30,12 +29,10 @@ export function getPostBySlug(slug: string, fields = []): Post {
       items[field] = data[field]
     }
   })
-  return items as Post
+  return items as MDX.Document
 }
 
-export function getAllPosts(
-  fields = []
-): Array<ReturnType<typeof getPostBySlug>> {
+export function getAllPosts(fields = []): Array<MDX.Document> {
   const slugs = getPostSlugs()
 
   const posts = slugs

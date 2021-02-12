@@ -1,12 +1,12 @@
 import config from "../../../blog.config"
 import Wrapper from "layout/Wrapper"
-import Posts, { Post } from "../../views/Posts"
+import Posts from "../../views/Posts"
 import { getAllPosts } from "../../api"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
 import { ParsedUrlQuery } from "querystring"
 
 interface Props {
-  posts: Post[]
+  posts: MDX.Document[]
   prevPage: number | null
   nextPage: number | null
   pageIndex: number

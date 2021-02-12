@@ -3,13 +3,12 @@ import BlogPost from "../views/BlogPost"
 import config from "../../blog.config.js"
 import { getPostBySlug, getAllPosts } from "../api"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
-import { Post } from "views/Posts"
 
 interface Props {
-  post: Post
+  post: MDX.Document
 }
 
-const PostPage: NextPage<{ post: Post }> = ({ post }) => (
+const PostPage: NextPage<{ post: MDX.Document }> = ({ post }) => (
   <Wrapper
     url={config.url + post.slug}
     title={config.title + " | " + post.title}

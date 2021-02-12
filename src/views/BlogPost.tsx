@@ -7,12 +7,11 @@ import Container from "../ui/Container"
 import CodeBlock from "../ui/CodeBlock"
 import DraftBadge from "../ui/DraftBadge"
 
-const BlogPost: React.FC<any> = ({ post }) => {
+const BlogPost: React.FC<{ post: MDX.Document }> = ({ post }) => {
   const isLocal = process.env.NODE_ENV === "development"
 
   const components = {
-    Box: (props: any) => <Box {...props} />,
-    pre: (props: any) => <div {...props} />,
+    Box: Box,
     code: CodeBlock,
   }
 

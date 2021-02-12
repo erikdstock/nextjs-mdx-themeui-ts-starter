@@ -1,7 +1,7 @@
 import MDX from "@mdx-js/runtime"
 import config from "../../blog.config"
 import { DiscussionEmbed } from "disqus-react"
-import { Box, Image, Text, Heading } from "theme-ui"
+import { Box, Text, Heading } from "theme-ui"
 import Container from "../ui/Container"
 import CodeBlock from "../ui/CodeBlock"
 import DraftBadge from "../ui/DraftBadge"
@@ -47,7 +47,7 @@ const BlogPost: React.FC<any> = ({ post }) => {
                 width: "100%",
               }}
             >
-              <Image
+              <img
                 sx={{
                   border: "1px solid",
                   borderColor: "rgba(0,0,0,.1)",

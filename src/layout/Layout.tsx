@@ -8,7 +8,7 @@ import Main from "../ui/Main"
 import Footer from "../ui/Footer"
 
 // // inject inline styles on the body before the page is rendered to avoid the flash of light if we are in dark mode
-// // TODO: revisit whether this is the best way
+// // TODO: revisit whether this is the best way? Remove this and set up theme-ui the right way
 // eslint-disable-next-line prefer-const
 let codeToRunOnClient: string | null = null
 const isLocal = process.env.NODE_ENV === "development"

@@ -4,7 +4,11 @@ import config from "../../blog.config"
 import ReactGA from "react-ga"
 import { Props as DocHeadProps } from "./DocHead"
 
-const Wrapper: React.FC<DocHeadProps> = (props) => {
+/**
+ * The top-level Page Wrapper including layout, document head and optional google analytics.
+ * If you aren't using google analytics, use `<Layout />` instead.
+ */
+export const PageWrapper: React.FC<DocHeadProps> = (props: DocHeadProps) => {
   // TODO: should this use using a hook?
   if (typeof config.analytics === "string" && config.analytics !== "") {
     ReactGA.initialize(config.analytics)
@@ -15,5 +19,3 @@ const Wrapper: React.FC<DocHeadProps> = (props) => {
   }
   return <Layout {...props} />
 }
-
-export default Wrapper

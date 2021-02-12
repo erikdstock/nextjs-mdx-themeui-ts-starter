@@ -1,5 +1,5 @@
 import config from "../../../blog.config"
-import Wrapper from "layout/Wrapper"
+import { PageWrapper } from "layout/PageWrapper"
 import Posts from "../../views/Posts"
 import { getAllPosts } from "../../api"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
@@ -20,7 +20,7 @@ const PostsPage: NextPage<Props> = ({
   pageIndex,
   numPages,
 }) => (
-  <Wrapper
+  <PageWrapper
     url={config.url + "blog/" + (pageIndex + 1)}
     title={config.title + " | Blog - " + (pageIndex + 1) + " of " + numPages}
     description={config.description}
@@ -28,7 +28,7 @@ const PostsPage: NextPage<Props> = ({
     imageAlt={config.shareImageAlt}
   >
     <Posts posts={posts} prevPage={prevPage} nextPage={nextPage} />
-  </Wrapper>
+  </PageWrapper>
 )
 
 interface PathParams extends ParsedUrlQuery {

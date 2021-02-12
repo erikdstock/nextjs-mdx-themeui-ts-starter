@@ -1,11 +1,11 @@
 import config from "../../blog.config"
 import Wrapper from "../layout/Wrapper"
-import Posts, { Post } from "../views/Posts"
+import Posts from "../views/Posts"
 import { getAllPosts } from "../api"
 import { GetStaticProps, NextPage } from "next"
 
 interface Props {
-  posts: Post[] // Post is another interface i have already defined elsewhere
+  posts: MDX.Document[] // Post is another interface i have already defined elsewhere
   prevPage: number | null
   nextPage: number | null
 }

@@ -1,11 +1,12 @@
 import config from "../../../blog.config"
 import Wrapper from "layout/Wrapper"
-import Posts, { Post } from "../../views/Posts"
+import Posts from "../../views/Posts"
 import { getAllPosts } from "../../api"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
+import { ParsedUrlQuery } from "querystring"
 
 interface Props {
-  posts: Post[]
+  posts: MDX.Document[]
   prevPage: number | null
   nextPage: number | null
   pageIndex: number
@@ -30,7 +31,13 @@ const PostsPage: NextPage<Props> = ({
   </Wrapper>
 )
 
-export const getStaticProps: GetStaticProps<any> = async ({ params }) => {
+interface PathParams extends ParsedUrlQuery {
+  page: string
+}
+
+export const getStaticProps: GetStaticProps<Props, PathParams> = async ({
+  params,
+}) => {
   const posts = getAllPosts([
     "title",
     "date",
@@ -44,28 +51,26 @@ export const getStaticProps: GetStaticProps<any> = async ({ params }) => {
     "draft",
   ])
 
-  const pageIndex = Array.isArray(params.page)
-    ? parseInt(params.page[0]) - 1
-    : parseInt(params.page) - 1
+  const pageIndex = parseInt(params.page) - 1
   const startIndex = pageIndex * config.postsPerPage
   const endIndex = (pageIndex + 1) * config.postsPerPage
 
-  const prevPosts = pageIndex > 0 ? pageIndex : null
-  const nextPosts = endIndex >= posts.length ? null : pageIndex + 2
+  const prevPage = pageIndex > 0 ? pageIndex : null
+  const nextPage = endIndex >= posts.length ? null : pageIndex + 2
   const numPages = (config.postsPerPage % getAllPosts().length) + 1
 
   return {
     props: {
       posts: posts.slice(startIndex, endIndex),
-      prevPosts,
-      nextPosts,
+      prevPage,
+      nextPage,
       pageIndex,
       numPages,
     },
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
   const numPages = (config.postsPerPage % getAllPosts().length) + 1
 
   return {

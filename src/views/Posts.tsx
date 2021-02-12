@@ -7,21 +7,8 @@ import Container from "../ui/Container"
 import DraftBadge from "../ui/DraftBadge"
 import { Link } from "ui/Link"
 
-export interface Post {
-  draft?: boolean
-  date: string
-  slug: string
-  title: string
-  excerpt: string
-  content?: string
-  coverImage?: string
-  coverImageHeight?: number
-  coverImageWidth?: number
-  coverImageAlt?: string
-}
-
 interface Props {
-  posts: Post[]
+  posts: MDX.Document[]
   prevPage: number | null
   nextPage: number | null
 }

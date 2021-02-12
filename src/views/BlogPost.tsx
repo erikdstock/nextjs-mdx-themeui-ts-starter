@@ -1,19 +1,17 @@
 import MDX from "@mdx-js/runtime"
 import config from "../../blog.config"
 import { DiscussionEmbed } from "disqus-react"
-import { Box, Text, Heading } from "theme-ui"
-import Image from "next/image"
+import { Box, Image, Text, Heading } from "theme-ui"
 import Container from "../ui/Container"
 import CodeBlock from "../ui/CodeBlock"
 import DraftBadge from "../ui/DraftBadge"
-import { Post } from "./Posts"
 
-const BlogPost: (post: Post) => JSX.Element = (post) => {
+const BlogPost: React.FC<any> = ({ post }) => {
   const isLocal = process.env.NODE_ENV === "development"
 
   const components = {
-    // Box: (props: any) => <Box {...props} />,
-    // pre: (props: any) => <div {...props} />,
+    Box: (props: any) => <Box {...props} />,
+    pre: (props: any) => <div {...props} />,
     code: CodeBlock,
   }
 
@@ -44,14 +42,20 @@ const BlogPost: (post: Post) => JSX.Element = (post) => {
           {post.coverImage && (
             <Box
               sx={{
+                mt: 2,
                 mb: 3,
-                border: "1px solid",
-                borderColor: "rgba(0,0,0,.1)",
+                width: "100%",
               }}
             >
               <Image
-                height={post.coverImageHeight}
-                width={post.coverImageWidth}
+                sx={{
+                  border: "1px solid",
+                  borderColor: "rgba(0,0,0,.1)",
+                  width: "auto",
+                  height: "auto",
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                }}
                 src={post.coverImage}
                 alt={post.coverImageAlt || ""}
               />

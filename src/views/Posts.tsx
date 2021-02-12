@@ -13,7 +13,7 @@ export interface Post {
   slug: string
   title: string
   excerpt: string
-  content: string
+  content?: string
   coverImage?: string
   coverImageHeight?: number
   coverImageWidth?: number

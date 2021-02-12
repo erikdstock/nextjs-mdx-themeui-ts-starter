@@ -1,5 +1,5 @@
-import { LayoutWithAnalytics } from "../layout/LayoutWithAnalytics"
-import BlogPost from "../views/BlogPost"
+import { LayoutWithAnalytics } from "../components/layout/LayoutWithAnalytics"
+import BlogPost from "../components/views/BlogPost"
 import config from "../../blog.config.js"
 import { getPostBySlug, getAllPosts } from "../api"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"

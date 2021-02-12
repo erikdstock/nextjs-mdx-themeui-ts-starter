@@ -1,8 +1,8 @@
-import config from "../../blog.config"
+import config from "../../../blog.config"
 import { MDXProvider } from "@mdx-js/react"
 import { Box, Heading } from "theme-ui"
+import Blurb from "mdx/blurb.mdx"
 import Nav from "./Nav"
-import Blurb from "../mdx/blurb.mdx"
 
 const Header: React.FC = () => (
   <MDXProvider>

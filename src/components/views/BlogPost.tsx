@@ -1,11 +1,12 @@
 /** @jsxImportSource theme-ui */
+
 import MDX from "@mdx-js/runtime"
-import config from "../../blog.config"
+import config from "../../../blog.config"
 import { DiscussionEmbed } from "disqus-react"
 import { Box, Text, Heading } from "theme-ui"
-import Container from "../ui/Container"
-import CodeBlock from "../ui/CodeBlock"
-import DraftBadge from "../ui/DraftBadge"
+import Container from "components/ui/Container"
+import CodeBlock from "components/ui/CodeBlock"
+import DraftBadge from "components/ui/DraftBadge"
 
 const BlogPost: React.FC<{ post: MDX.Document }> = ({ post }) => {
   const isLocal = process.env.NODE_ENV === "development"

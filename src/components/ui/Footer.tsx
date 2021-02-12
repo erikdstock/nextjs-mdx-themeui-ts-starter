@@ -1,5 +1,5 @@
 import { Box, Text } from "theme-ui"
-import { Link } from "ui/Link"
+import { Link } from "components/ui/Link"
 import { Media, MediaContextProvider } from "styles/responsive"
 
 const Footer: React.FC = () => (

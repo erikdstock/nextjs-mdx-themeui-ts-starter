@@ -1,11 +1,10 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+/** @jsxImportSource theme-ui */
+
 import MDX from "@mdx-js/runtime"
 import { Flex, Box, Heading } from "theme-ui"
-import Container from "../ui/Container"
-import DraftBadge from "../ui/DraftBadge"
-import { Link } from "ui/Link"
+import Container from "components/ui/Container"
+import DraftBadge from "components/ui/DraftBadge"
+import { Link } from "components/ui/Link"
 
 interface Props {
   posts: MDX.Document[]

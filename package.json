@@ -12,7 +12,6 @@
     "ci": "yarn test && yarn type-check && yarn lint",
     "deploy": "git push origin main && vercel --prod",
     "dev:debug": "node --inspect-brk --no-lazy node_modules/.bin/next dev",
-    "format-watch": "npm run format && onchange \"**/*.{js,jsx,json,md}\" -- prettier --write {{changed}}",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "static:serve": "npx serve out",
     "test": "echo 'Test: not implemented'",
@@ -29,7 +28,6 @@
     "next": "^10.0.5",
     "next-images": "^1.7.0",
     "prism-react-renderer": "^1.1.1",
-    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-ga": "^3.3.0",
@@ -47,7 +45,6 @@
     "eslint-plugin-react": "^7.22.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
-    "onchange": "^7.1.0",
     "prettier": "^2.2.1"
   },
   "husky": {

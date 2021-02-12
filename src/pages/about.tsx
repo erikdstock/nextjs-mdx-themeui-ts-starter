@@ -1,5 +1,5 @@
-import { LayoutWithAnalytics } from "../layout/LayoutWithAnalytics"
-import About from "../views/About"
+import { LayoutWithAnalytics } from "../components/layout/LayoutWithAnalytics"
+import About from "../components/views/About"
 import config from "../../blog.config.js"
 
 const AboutPage: React.FC = () => (

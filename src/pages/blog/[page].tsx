@@ -1,6 +1,6 @@
 import config from "../../../blog.config"
-import { LayoutWithAnalytics } from "layout/LayoutWithAnalytics"
-import Posts from "../../views/Posts"
+import { LayoutWithAnalytics } from "components/layout/LayoutWithAnalytics"
+import Posts from "../../components/views/Posts"
 import { getAllPosts } from "../../api"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
 import { ParsedUrlQuery } from "querystring"

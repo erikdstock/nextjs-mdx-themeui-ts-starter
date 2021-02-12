@@ -1,4 +1,4 @@
-import { theme } from "../styles/theme"
+import { theme } from "../../styles/theme"
 import { Box } from "theme-ui"
 import { DocHead, Props as DocHeadProps } from "./DocHead"
 import ThemeToggle from "../ui/ThemeToggle"

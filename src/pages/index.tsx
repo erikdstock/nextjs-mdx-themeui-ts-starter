@@ -1,5 +1,5 @@
 import config from "../../blog.config"
-import { PageWrapper } from "../layout/PageWrapper"
+import { LayoutWithAnalytics } from "../layout/LayoutWithAnalytics"
 import Posts from "../views/Posts"
 import { getAllPosts } from "../api"
 import { GetStaticProps, NextPage } from "next"
@@ -15,7 +15,7 @@ const PostsPage: NextPage<Props> = ({
   prevPage: prevPage,
   nextPage: nextPage,
 }) => (
-  <PageWrapper
+  <LayoutWithAnalytics
     url={config.url}
     title={config.title}
     description={config.description}
@@ -23,7 +23,7 @@ const PostsPage: NextPage<Props> = ({
     imageAlt={config.shareImageAlt}
   >
     <Posts posts={posts} prevPage={prevPage} nextPage={nextPage} />
-  </PageWrapper>
+  </LayoutWithAnalytics>
 )
 
 export const getStaticProps: GetStaticProps<Props> = async function () {

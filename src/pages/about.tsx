@@ -1,9 +1,9 @@
-import { PageWrapper } from "../layout/PageWrapper"
+import { LayoutWithAnalytics } from "../layout/LayoutWithAnalytics"
 import About from "../views/About"
 import config from "../../blog.config.js"
 
 const AboutPage: React.FC = () => (
-  <PageWrapper
+  <LayoutWithAnalytics
     url={config.url + "about"}
     title={config.title + " | About"}
     description={"Learn more about " + config.title}
@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => (
     imageAlt={config.shareImageAlt}
   >
     <About />
-  </PageWrapper>
+  </LayoutWithAnalytics>
 )
 
 export default AboutPage

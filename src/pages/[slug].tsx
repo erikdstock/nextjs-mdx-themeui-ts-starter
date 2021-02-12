@@ -1,4 +1,4 @@
-import { PageWrapper } from "../layout/PageWrapper"
+import { LayoutWithAnalytics } from "../layout/LayoutWithAnalytics"
 import BlogPost from "../views/BlogPost"
 import config from "../../blog.config.js"
 import { getPostBySlug, getAllPosts } from "../api"
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const PostPage: NextPage<{ post: MDX.Document }> = ({ post }) => (
-  <PageWrapper
+  <LayoutWithAnalytics
     url={config.url + post.slug}
     title={config.title + " | " + post.title}
     description={post.excerpt}
@@ -17,7 +17,7 @@ const PostPage: NextPage<{ post: MDX.Document }> = ({ post }) => (
     imageAlt={post.coverImageAlt}
   >
     <BlogPost post={post} />
-  </PageWrapper>
+  </LayoutWithAnalytics>
 )
 
 export const getStaticProps: GetStaticProps<Props, { slug: string }> = async ({

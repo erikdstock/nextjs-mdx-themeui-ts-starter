@@ -1,3 +1,4 @@
+/** @jsxImportSource theme-ui */
 import MDX from "@mdx-js/runtime"
 import config from "../../blog.config"
 import { DiscussionEmbed } from "disqus-react"

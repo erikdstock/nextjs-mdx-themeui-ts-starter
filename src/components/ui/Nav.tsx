@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { Box } from "theme-ui"
-import NavLink from "ui/NavLink"
+import NavLink from "components/ui/NavLink"
 
 const Nav: React.FC = () => {
   const router = useRouter()

@@ -1,5 +1,5 @@
 import Head from "next/head"
-import config from "../../blog.config"
+import config from "../../../blog.config"
 
 export interface Props {
   title: string

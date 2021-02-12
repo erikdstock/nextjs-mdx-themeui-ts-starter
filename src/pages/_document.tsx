@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from "next/document"
+import { mediaStyles } from "styles/responsive"
 import { InitializeColorMode } from "theme-ui"
 
 export default class extends Document {
@@ -19,7 +20,12 @@ export default class extends Document {
   render(): JSX.Element {
     return (
       <Html>
-        <Head />
+        <Head>
+          <style
+            type="text/css"
+            dangerouslySetInnerHTML={{ __html: mediaStyles }}
+          />
+        </Head>
         <body>
           <InitializeColorMode />
           <Main />

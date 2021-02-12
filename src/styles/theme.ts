@@ -4,7 +4,7 @@ export const theme: ThemeType = {
   initialColorModeName: "Light",
   useColorSchemeMediaQuery: true,
   space: [0, 4, 8, 16, 32, 64, 128],
-  breakpoints: ["32em", "48em", "64em", "80em"],
+  breakpoints: ["512px", "768px", "1024px", "1280px"],
   radii: [0, 3, 6],
   shadows: {
     card: "0 0 4px rgba(0, 0, 0, .125)",
@@ -24,7 +24,7 @@ export const theme: ThemeType = {
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading:
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    moonospace: "Menlo, monospace",
+    monospace: "Menlo, monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
@@ -72,12 +72,17 @@ export const theme: ThemeType = {
       fontSize: 3,
       px: 3,
       py: 2,
-      bg: "black",
-      color: "#fff",
+      bg: "green",
+      color: "white",
       boxShadow: "none",
       borderRadius: "4px",
       border: "none",
       cursor: "pointer",
+      outline: {
+        bg: "white",
+        color: "green",
+        border: "2px solid green",
+      },
     },
   },
   styles: {

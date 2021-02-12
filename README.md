@@ -1,25 +1,32 @@
 # Next.js MDX Blog Starter with Theme-UI & Typescript
 
-This is a starter blog forked from [johnpolacek/nextjs-mdx-blog-starter](https://github.com/johnpolacek/nextjs-mdx-blog-starter). Almost all styles and docs have been preserved, including the rest of this README. The main differences with that repo (in progress):
+This is a starter blog forked from [johnpolacek/nextjs-mdx-blog-starter](https://github.com/johnpolacek/nextjs-mdx-blog-starter). Almost all styles and docs have been preserved, including much of the rest of this README. The main differences with that repo (in progress):
 
 - [x] The site has been entirely converted to typescript
-- [ ] Linting, prettier and typescript conventions applied, all errors and warnings fixed
-- [ ] Commit and push hooks for linting and type-checking have been enabled (override with `--no-verify` or remove `husky` and `lint-staged` from dependencies)
-- [ ] Reconfigured to work for static exports
-- [ ] Example app deployed to vercel
+- [x] Linting, prettier and typescript conventions applied, all errors and warnings fixed
+- [x] Commit and push hooks for linting and type-checking have been enabled (override with `--no-verify` or remove `husky` and `lint-staged` from dependencies)
+- [x] Reconfigured to work for static exports
+- [x] Example app deployed to vercel
 - [x] Switched `yarn` to `npm` (personal convention)
 - [x] Theme-ui has been updated to 0.6.6-alpha for native typescript support
 - [x] Added a simple github workflow for testing
+- [x] Added @artsy/fresnel to work nicely with static app
+- [x] Disabled (commented out) Google analytics by default
+- [x] some restructuring based on personal preference (in particular a `components` folder), use of typescript's absolute imports from `baseUrl`
 
-_Most of the remaining README is from the original repo (credit to @johnpolancek for this documentation and the overall feel of the site)._
+_Authors: @erikdstock and @kwicz. Credit to @johnpolancek for this documentation and the overall feel of the site as well as the vast majority of its implementation_
+
+```
+Most of the remaining README is from the original repo.
+```
 
 Next.js MDX Blog Starter for building blogs with [Next.js](https://nextjs.org/) and [MDX](https://mdxjs.com/), including [Theme UI](https://theme-ui.com/home/) Component Design System, [Vercel Deployment](https://vercel.com/) and more.
 
-View Demo at [nextjs-mdx-blog-starter.vercel.app](https://nextjs-mdx-blog-starter.vercel.app/)
+View Demo at [nextjs-mdx-themeui-ts-starter.erikdstock.vercel.app/](http://nextjs-mdx-themeui-ts-starter.erikdstock.vercel.app/)
 
 ## Deploy
 
-Build and deploy with vercel. [Install vercel](https://vercel.com/download) if you haven’t already
+(Optional) Build and deploy with vercel. [Install vercel](https://vercel.com/download) if you haven’t already. This is a static site so it can also be deployed to any CDN.
 
 ```
 npm install && vercel deploy

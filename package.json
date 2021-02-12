@@ -1,8 +1,8 @@
 {
-  "name": "erik-online",
+  "name": "nextjs-mdx-themeui-ts-starter",
   "description": "A new kind of website for the post-covid era",
-  "version": "0.0.1",
-  "repository": "https://github.com/johnpolacek/nextjs-mdx-blog-starter",
+  "version": "0.0.2",
+  "repository": "https://github.com/erikdstock/nextjs-mdx-themeui-ts-starter",
   "license": "MIT",
   "scripts": {
     "dev": "next",

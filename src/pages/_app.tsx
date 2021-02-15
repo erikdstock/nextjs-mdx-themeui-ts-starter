@@ -9,9 +9,7 @@ export default class App extends NextApp {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={theme}>
-        {/* <Themed.root> */}
         <Component {...pageProps} />
-        {/* </Themed.root> */}
       </ThemeProvider>
     )
   }

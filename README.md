@@ -4,7 +4,7 @@ This is a starter blog forked from [johnpolacek/nextjs-mdx-blog-starter](https:/
 
 - [x] The site has been entirely converted to typescript
 - [x] Linting, prettier and typescript conventions applied, all errors and warnings fixed
-- [x] Commit and push hooks for linting and type-checking have been enabled (override with `--no-verify` or remove `husky` and `lint-staged` from dependencies)
+- [x] Commit and push hooks for linting and type-checking have been enabled (override with `--no-verify` or remove `husky` and `lint-staged` from dependencies to disable completely)
 - [x] Reconfigured to work for static exports
 - [x] Example app deployed to vercel
 - [x] Switched `yarn` to `npm` (personal convention)

@@ -30,7 +30,7 @@ const Footer: React.FC = () => (
     <Text
       sx={{
         fontFamily: "monospace",
-        bg: "lite",
+        bg: "muted",
         display: "inline-block",
         px: 1,
         borderRadius: 1,

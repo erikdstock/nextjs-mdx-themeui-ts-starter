@@ -22,7 +22,8 @@ const ThemeToggle: React.FC = () => {
       }}
     >
       <Button
-        sx={{ bg: "gray", py: 1, px: 2, fontSize: 3, minWidth: 75 }}
+        variant="primary.outline"
+        sx={{ py: 1, px: 2, fontSize: 3, minWidth: 75 }}
         onClick={(_e) => {
           setColorMode(colorMode === "default" ? "dark" : "default")
         }}

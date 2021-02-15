@@ -12,7 +12,7 @@ const Main: React.FC = (props) => {
         alignItems: "center",
         borderBottom: "solid 1px",
         borderTop: "solid 1px",
-        borderColor: "lite",
+        borderColor: "muted",
       }}
       {...props}
     />

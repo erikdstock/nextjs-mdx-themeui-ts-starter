@@ -1,7 +1,9 @@
 {
   "name": "nextjs-mdx-themeui-ts-starter",
-  "description": "A new kind of website for the post-covid era",
-  "version": "0.0.2",
+  "private": true,
+  "maintainers": ["Erik Stockmeier <erikdstock@users.noreply.github.com>", "Katy Solovewicz <kwicz@users.noreply.github.com>"],
+  "description": "A nextjs blog starting built on typescript, theme-ui and mdx",
+  "version": "0.1.0",
   "repository": "https://github.com/erikdstock/nextjs-mdx-themeui-ts-starter",
   "license": "MIT",
   "scripts": {

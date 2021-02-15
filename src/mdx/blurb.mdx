@@ -1,32 +1,32 @@
-import { Box, Image, Button, Link } from "theme-ui"
+import { Box, Image, Button, Link, Text } from "theme-ui"
 
-Created by **[John Polacek](https://johnpolacek.com)**, a web developer from Chicago. **Follow me at [@johnpolacek](https://twitter.com/johnpolacek)**
+_Heavily inspired by [johnpolacek/nextjs-mdx-blog-starter](https://github.com/johnpolacek/nextjs-mdx-blog-starter), originally created by [**John Polacek**](https://johnpolacek.com)_  
+Adapted by **[Erik Stockmeier](https://github.com/erikdstock)**
 
 <!-- two different ways to make a link that looks like a button -->
 
 <Box>
   <Link
+    variant="buttons.primary"
     sx={{
       display: "inline-block",
-      bg: "primary",
       px: 4,
       py: 3,
       mx: 3,
       my: 3,
-      color: "white",
       textDecoration: "none",
       fontSize: 3,
-      borderRadius: "4px",
     }}
-    href="https://github.com/johnpolacek/nextjs-mdx-blog-starter"
+    href="https://github.com/erikdstock/nextjs-mdx-themeui-ts-starter"
   >
     View on Github
   </Link>
   <Link
     download
-    href="https://github.com/johnpolacek/nextjs-mdx-blog-starter/archive/main.zip"
+    href="https://github.com/erikdstock/nextjs-mdx-themeui-ts-starter/archive/main.zip"
   >
     <Button
+      variant="primary"
       sx={{
         display: "inline-block",
         bg: "secondary",
@@ -34,9 +34,7 @@ Created by **[John Polacek](https://johnpolacek.com)**, a web developer from Chi
         py: 3,
         mx: 3,
         my: 3,
-        color: "white",
         fontSize: 3,
-        borderRadius: "4px",
       }}
     >
       <Image
